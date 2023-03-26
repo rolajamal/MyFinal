@@ -3,14 +3,18 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/MyFinal/PlantsCare-master/app/src/main/res/drawable/button_back.xml" value="0.1135" />
+        <entry key="..\:/MyFinal/PlantsCare-master/app/src/main/res/drawable/edit_text_style.xml" value="0.1135" />
+        <entry key="..\:/MyFinal/PlantsCare-master/app/src/main/res/drawable/ic_baseline_arrow_back_ios_24.xml" value="0.1135" />
         <entry key="..\:/MyFinal/PlantsCare-master/app/src/main/res/layout/activity_forget_password.xml" value="0.20416666666666666" />
         <entry key="..\:/MyFinal/PlantsCare-master/app/src/main/res/layout/activity_main.xml" value="0.20416666666666666" />
         <entry key="..\:/MyFinal/PlantsCare-master/app/src/main/res/layout/activity_page1.xml" value="0.20416666666666666" />
         <entry key="..\:/MyFinal/PlantsCare-master/app/src/main/res/layout/activity_page2.xml" value="0.20416666666666666" />
         <entry key="..\:/MyFinal/PlantsCare-master/app/src/main/res/layout/activity_page3.xml" value="0.20416666666666666" />
         <entry key="..\:/MyFinal/PlantsCare-master/app/src/main/res/layout/activity_page4.xml" value="0.20416666666666666" />
-        <entry key="..\:/MyFinal/PlantsCare-master/app/src/main/res/layout/activity_signin.xml" value="0.20416666666666666" />
-        <entry key="..\:/MyFinal/PlantsCare-master/app/src/main/res/layout/activity_signup.xml" value="0.20416666666666666" />
+        <entry key="..\:/MyFinal/PlantsCare-master/app/src/main/res/layout/activity_sections.xml" value="0.20416666666666666" />
+        <entry key="..\:/MyFinal/PlantsCare-master/app/src/main/res/layout/activity_signin.xml" value="0.25" />
+        <entry key="..\:/MyFinal/PlantsCare-master/app/src/main/res/layout/activity_signup.xml" value="0.25" />
       </map>
     </option>
   </component>

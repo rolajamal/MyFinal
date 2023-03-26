@@ -23,8 +23,8 @@ import java.util.HashMap;
 
 public class Signup extends AppCompatActivity {
     ActivitySignupBinding binding;
-    private FirebaseAuth firebaseAuth;
-    private ProgressDialog progressDialog;
+    FirebaseAuth firebaseAuth;
+//     ProgressDialog progressDialog;
 
 
 
@@ -33,15 +33,13 @@ public class Signup extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         binding=ActivitySignupBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
+        firebaseAuth=FirebaseAuth.getInstance();
 
         binding.btnSignUp.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 valideData();
-
             }
-
-
         });
 
         binding.login.setOnClickListener(new View.OnClickListener() {
@@ -56,8 +54,8 @@ public class Signup extends AppCompatActivity {
 
     private void valideData() {
         name=binding.usernameEt.getText().toString();
-        email=binding.emailEt.getText().toString();
-        password=binding.passwordEt.getText().toString();
+        email=binding.emailEtUp.getText().toString();
+        password=binding.changePasswordEtUp.getText().toString();
         Cpassword=binding.confirmpassEt.getText().toString();
 
         if(TextUtils.isEmpty(name)){
@@ -77,8 +75,8 @@ public class Signup extends AppCompatActivity {
     }
 
     private void createUserAccount() {
-        progressDialog.setMessage("creating Account..");
-        progressDialog.show();
+//        progressDialog.setMessage("creating Account..");
+//        progressDialog.show();
 
         firebaseAuth.createUserWithEmailAndPassword(email,password).addOnSuccessListener(new OnSuccessListener<AuthResult>() {
             @Override
@@ -91,7 +89,7 @@ public class Signup extends AppCompatActivity {
         }).addOnFailureListener(new OnFailureListener() {
             @Override
             public void onFailure(@NonNull Exception e) {
-                progressDialog.dismiss();
+//                progressDialog.dismiss();
                 Toast.makeText(Signup.this, ""+e.getMessage(), Toast.LENGTH_SHORT).show();
 
             }
@@ -99,7 +97,7 @@ public class Signup extends AppCompatActivity {
     }
 
     private void updateUserinfo() {
-        progressDialog.setTitle("Saving User info...");
+//        progressDialog.setTitle("Saving User info...");
         long timestamp= System.currentTimeMillis();
 
         String uid=firebaseAuth.getUid();
@@ -116,7 +114,7 @@ public class Signup extends AppCompatActivity {
         databaseReference.child(uid).setValue(hashMap).addOnSuccessListener(new OnSuccessListener<Void>() {
             @Override
             public void onSuccess(Void unused) {
-                progressDialog.dismiss();
+//                progressDialog.dismiss();
                 Toast.makeText(Signup.this, "account created...", Toast.LENGTH_SHORT).show();
                 Intent intent=new Intent(Signup.this,Activity_sections.class);
 
@@ -127,7 +125,7 @@ public class Signup extends AppCompatActivity {
         }).addOnFailureListener(new OnFailureListener() {
             @Override
             public void onFailure(@NonNull Exception e) {
-                progressDialog.dismiss();
+//                progressDialog.dismiss();
                 Toast.makeText(Signup.this, ""+e.getMessage(), Toast.LENGTH_SHORT).show();
             }
         });

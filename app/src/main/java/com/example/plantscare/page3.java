@@ -19,7 +19,7 @@ public class page3 extends AppCompatActivity {
         binding=ActivityPage3Binding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
-        binding.btnStr3.setOnClickListener(new View.OnClickListener() {
+        binding.btnSignupp.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(getBaseContext(), Page4.class);
