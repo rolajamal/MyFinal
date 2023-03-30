@@ -26,7 +26,6 @@ import com.google.firebase.database.ValueEventListener;
 public class Signin extends AppCompatActivity {
     ActivitySigninBinding binding;
     private FirebaseAuth firebaseAuth;
-//    private ProgressDialog progressDialog;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,16 +34,13 @@ public class Signin extends AppCompatActivity {
         setContentView(binding.getRoot());
 
         firebaseAuth= FirebaseAuth.getInstance();
-//        progressDialog=new ProgressDialog(this);
-//        progressDialog.setTitle("please wait ...");
-//        progressDialog.setCanceledOnTouchOutside(false);
+
 
         binding.tvSignUp.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent=new Intent(getBaseContext(),Signup.class);
                 startActivity(intent);
-//                finish();
             }
         });
 
@@ -72,8 +68,7 @@ public class Signin extends AppCompatActivity {
     }
 
     private void UserLogin() {
-//        progressDialog.setMessage("login ");
-//        progressDialog.dismiss();
+
 
         firebaseAuth.signInWithEmailAndPassword(email,password).addOnSuccessListener(new OnSuccessListener<AuthResult>() {
             @Override
@@ -84,7 +79,6 @@ public class Signin extends AppCompatActivity {
         }).addOnFailureListener(new OnFailureListener() {
             @Override
             public void onFailure(@NonNull Exception e) {
-//                progressDialog.dismiss();
                 Toast.makeText(Signin.this, ""+e.getMessage(), Toast.LENGTH_SHORT).show();
 
             }
@@ -93,7 +87,6 @@ public class Signin extends AppCompatActivity {
     }
 
     private void CheakUser() {
-//        progressDialog.setMessage("cheaking user..");
         FirebaseUser firebaseUser= firebaseAuth.getCurrentUser();
         DatabaseReference databaseReference= FirebaseDatabase.getInstance().getReference("users");
         databaseReference.child(firebaseUser.getUid()).addValueEventListener(new ValueEventListener() {
@@ -113,7 +106,7 @@ public class Signin extends AppCompatActivity {
             }
         });
 
-        binding.textView7.setOnClickListener(new View.OnClickListener() {
+        binding.tvForgrtpass.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent=new Intent(getBaseContext(),ForgetPassword.class);

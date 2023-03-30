@@ -20,6 +20,9 @@
     <string name="SIGN_IN">SIGN_IN</string>
     <string name="Dont_have_an_account">Dont have an account?</string>
     <string name="Log_in">Log IN</string>
+    <string name="password" />
+    <string name="enter_your_password" />
+    <string name="confirm_password" />
 
 
 </resources>

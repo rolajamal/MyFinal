@@ -24,7 +24,6 @@ import java.util.HashMap;
 public class Signup extends AppCompatActivity {
     ActivitySignupBinding binding;
     FirebaseAuth firebaseAuth;
-//     ProgressDialog progressDialog;
 
 
 
@@ -35,7 +34,7 @@ public class Signup extends AppCompatActivity {
         setContentView(binding.getRoot());
         firebaseAuth=FirebaseAuth.getInstance();
 
-        binding.btnSignUp.setOnClickListener(new View.OnClickListener() {
+        binding.btnSignup.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 valideData();
@@ -54,8 +53,8 @@ public class Signup extends AppCompatActivity {
 
     private void valideData() {
         name=binding.usernameEt.getText().toString();
-        email=binding.emailEtUp.getText().toString();
-        password=binding.changePasswordEtUp.getText().toString();
+        email=binding.emailEt.getText().toString();
+        password=binding.passwordEt.getText().toString();
         Cpassword=binding.confirmpassEt.getText().toString();
 
         if(TextUtils.isEmpty(name)){
@@ -75,8 +74,7 @@ public class Signup extends AppCompatActivity {
     }
 
     private void createUserAccount() {
-//        progressDialog.setMessage("creating Account..");
-//        progressDialog.show();
+;
 
         firebaseAuth.createUserWithEmailAndPassword(email,password).addOnSuccessListener(new OnSuccessListener<AuthResult>() {
             @Override
@@ -97,7 +95,6 @@ public class Signup extends AppCompatActivity {
     }
 
     private void updateUserinfo() {
-//        progressDialog.setTitle("Saving User info...");
         long timestamp= System.currentTimeMillis();
 
         String uid=firebaseAuth.getUid();
