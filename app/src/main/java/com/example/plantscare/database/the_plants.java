@@ -1,22 +1,36 @@
 package com.example.plantscare.database;
+
+
+import java.util.ArrayList;
+
 //النباتات
 public class the_plants {
     int id;
     String name;
     String details;
     String imga;
+    int id_cat;
+    ArrayList<diseases>diseasesArrayList;
+    ArrayList<pharmaceutical>pharmaceuticalArrayList;
 
-    public the_plants(int id, String name, String details, String imga) {
+
+    public the_plants(int id, String name, String details, String imga, int id_cat, ArrayList<diseases> diseasesArrayList, ArrayList<pharmaceutical> pharmaceuticalArrayList) {
         this.id = id;
         this.name = name;
         this.details = details;
         this.imga = imga;
+        this.id_cat = id_cat;
+        this.diseasesArrayList = diseasesArrayList;
+        this.pharmaceuticalArrayList = pharmaceuticalArrayList;
     }
 
-    public the_plants(String name, String details, String imga) {
+    public the_plants(String name, String details, String imga, int id_cat, ArrayList<diseases> diseasesArrayList, ArrayList<pharmaceutical> pharmaceuticalArrayList) {
         this.name = name;
         this.details = details;
         this.imga = imga;
+        this.id_cat = id_cat;
+        this.diseasesArrayList = diseasesArrayList;
+        this.pharmaceuticalArrayList = pharmaceuticalArrayList;
     }
 
     public int getId() {
@@ -49,5 +63,29 @@ public class the_plants {
 
     public void setImga(String imga) {
         this.imga = imga;
+    }
+
+    public int getId_cat() {
+        return id_cat;
+    }
+
+    public void setId_cat(int id_cat) {
+        this.id_cat = id_cat;
+    }
+
+    public ArrayList<diseases> getDiseasesArrayList() {
+        return diseasesArrayList;
+    }
+
+    public void setDiseasesArrayList(ArrayList<diseases> diseasesArrayList) {
+        this.diseasesArrayList = diseasesArrayList;
+    }
+
+    public ArrayList<pharmaceutical> getPharmaceuticalArrayList() {
+        return pharmaceuticalArrayList;
+    }
+
+    public void setPharmaceuticalArrayList(ArrayList<pharmaceutical> pharmaceuticalArrayList) {
+        this.pharmaceuticalArrayList = pharmaceuticalArrayList;
     }
 }

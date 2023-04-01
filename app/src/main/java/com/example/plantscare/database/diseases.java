@@ -3,14 +3,17 @@ package com.example.plantscare.database;
 public class diseases {
     int id;
     String name;
+    String detalis;
 
-    public diseases(int id, String name) {
+    public diseases(int id, String name, String detalis) {
         this.id = id;
         this.name = name;
+        this.detalis = detalis;
     }
 
-    public diseases(String name) {
+    public diseases(String name, String detalis) {
         this.name = name;
+        this.detalis = detalis;
     }
 
     public int getId() {
@@ -27,5 +30,13 @@ public class diseases {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public String getDetalis() {
+        return detalis;
+    }
+
+    public void setDetalis(String detalis) {
+        this.detalis = detalis;
     }
 }
