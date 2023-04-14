@@ -14,7 +14,7 @@
         android:layout_height="50dp"
         android:layout_marginBottom="70dp"
         android:background="@drawable/shape"
-        android:text="Next"
+        android:text="التالي"
         android:textAllCaps="false"
         android:textColor="#FFFFFF"
         android:textSize="20sp"
