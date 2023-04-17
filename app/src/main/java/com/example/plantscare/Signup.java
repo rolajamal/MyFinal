@@ -87,7 +87,6 @@ public class Signup extends AppCompatActivity {
         }).addOnFailureListener(new OnFailureListener() {
             @Override
             public void onFailure(@NonNull Exception e) {
-//                progressDialog.dismiss();
                 Toast.makeText(Signup.this, ""+e.getMessage(), Toast.LENGTH_SHORT).show();
 
             }
@@ -111,7 +110,6 @@ public class Signup extends AppCompatActivity {
         databaseReference.child(uid).setValue(hashMap).addOnSuccessListener(new OnSuccessListener<Void>() {
             @Override
             public void onSuccess(Void unused) {
-//                progressDialog.dismiss();
                 Toast.makeText(Signup.this, "account created...", Toast.LENGTH_SHORT).show();
                 Intent intent=new Intent(Signup.this,Activity_sections.class);
 
@@ -122,7 +120,6 @@ public class Signup extends AppCompatActivity {
         }).addOnFailureListener(new OnFailureListener() {
             @Override
             public void onFailure(@NonNull Exception e) {
-//                progressDialog.dismiss();
                 Toast.makeText(Signup.this, ""+e.getMessage(), Toast.LENGTH_SHORT).show();
             }
         });

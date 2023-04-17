@@ -5,6 +5,9 @@ public class diseases {
     String name;
     String detalis;
 
+    public diseases() {
+    }
+
     public diseases(int id, String name, String detalis) {
         this.id = id;
         this.name = name;

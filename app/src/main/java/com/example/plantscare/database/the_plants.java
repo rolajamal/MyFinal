@@ -13,6 +13,8 @@ public class the_plants {
     ArrayList<diseases>diseasesArrayList;
     ArrayList<pharmaceutical>pharmaceuticalArrayList;
 
+    public the_plants() {
+    }
 
     public the_plants(int id, String name, String details, String imga, int id_cat, ArrayList<diseases> diseasesArrayList, ArrayList<pharmaceutical> pharmaceuticalArrayList) {
         this.id = id;

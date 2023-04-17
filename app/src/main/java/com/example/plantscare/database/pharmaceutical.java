@@ -5,6 +5,9 @@ public class pharmaceutical {
     String name;
     String details;
 
+    public pharmaceutical() {
+    }
+
     public pharmaceutical(int id, String name, String details) {
         this.id = id;
         this.name = name;

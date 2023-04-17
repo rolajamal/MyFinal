@@ -89,15 +89,23 @@ public class Signin extends AppCompatActivity {
     private void CheakUser() {
         FirebaseUser firebaseUser= firebaseAuth.getCurrentUser();
         DatabaseReference databaseReference= FirebaseDatabase.getInstance().getReference("users");
+
+
         databaseReference.child(firebaseUser.getUid()).addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                String usertype = "" + dataSnapshot.child("usertype").getValue();
+                String usertype= ""+dataSnapshot.child("usertype").getValue();
 
+                if(usertype.equals("user")){
+                    Intent intent=new Intent(Signin.this,Activity_sections.class);
+                    startActivity(intent);
+                    finish();
+                }else  if(usertype.equals("admin")){
+                    Intent intent=new Intent(Signin.this,AdminActivity.class);
+                    startActivity(intent);
+                    finish();
 
-                Intent intent = new Intent(Signin.this, Activity_sections.class);
-                startActivity(intent);
-                finish();
+                }
             }
 
             @Override
@@ -105,6 +113,22 @@ public class Signin extends AppCompatActivity {
 
             }
         });
+//        databaseReference.child(firebaseUser.getUid()).addValueEventListener(new ValueEventListener() {
+//            @Override
+//            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+//                String usertype = "" + dataSnapshot.child("usertype").getValue();
+//
+//
+//                Intent intent = new Intent(Signin.this, Activity_sections.class);
+//                startActivity(intent);
+//                finish();
+//            }
+//
+//            @Override
+//            public void onCancelled(@NonNull DatabaseError databaseError) {
+//
+//            }
+//        });
 
         binding.tvForgrtpass.setOnClickListener(new View.OnClickListener() {
             @Override
