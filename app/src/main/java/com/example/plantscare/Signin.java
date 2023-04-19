@@ -52,6 +52,8 @@ public class Signin extends AppCompatActivity {
         });
 
     }
+
+
     private String email="",password="";
     private void valideData() {
         email=binding.emailEt.getText().toString();
