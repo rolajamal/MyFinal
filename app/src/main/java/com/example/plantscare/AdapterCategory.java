@@ -5,6 +5,7 @@ import android.content.DialogInterface;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Filter;
 import android.widget.ImageButton;
 import android.widget.TextView;
 
@@ -41,9 +42,11 @@ public class AdapterCategory extends RecyclerView.Adapter<AdapterCategory.Holder
 
     @Override
     public void onBindViewHolder(@NonNull HolderCategory holder, int position) {
-        Categories modelCategory=categoriesArrayList.get(position);
+        int pos =position;
 
-        int id=modelCategory.getId();
+        Categories modelCategory=categoriesArrayList.get(pos);
+
+        String id=modelCategory.getId();
         String category=modelCategory.getName();
 
         holder.Category_title.setText(category);
@@ -73,9 +76,9 @@ public class AdapterCategory extends RecyclerView.Adapter<AdapterCategory.Holder
 
     private void deleteCategory(Categories modelCategory, HolderCategory holder) {
 
-        int id=modelCategory.getId();
+        String id=modelCategory.getId();
         DatabaseReference databaseReference= FirebaseDatabase.getInstance().getReference("category");
-        databaseReference.child(String.valueOf(id)).removeValue().addOnSuccessListener(new OnSuccessListener<Void>() {
+        databaseReference.child(id).removeValue().addOnSuccessListener(new OnSuccessListener<Void>() {
             @Override
             public void onSuccess(Void unused) {
 
@@ -87,6 +90,9 @@ public class AdapterCategory extends RecyclerView.Adapter<AdapterCategory.Holder
             }
         });
     }
+
+
+
 
     class HolderCategory extends RecyclerView.ViewHolder{
 

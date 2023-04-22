@@ -1,14 +1,14 @@
 package com.example.plantscare.database;
 //التصنيفات
 public class Categories {
-    int id_cat;
+    String id_cat;
     String name;
     String imge;
 
     public Categories() {
     }
 
-    public Categories(int id, String name, String imge) {
+    public Categories(String id, String name, String imge) {
         this.id_cat = id;
         this.name = name;
         this.imge = imge;
@@ -19,11 +19,11 @@ public class Categories {
         this.imge = imge;
     }
 
-    public int getId() {
+    public String getId() {
         return id_cat;
     }
 
-    public void setId(int id) {
+    public void setId(String id) {
         this.id_cat = id;
     }
 

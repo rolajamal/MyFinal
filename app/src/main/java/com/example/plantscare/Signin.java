@@ -65,11 +65,11 @@ public class Signin extends AppCompatActivity {
         }else if(TextUtils.isEmpty(password)){
             Toast.makeText(this, "enter password", Toast.LENGTH_SHORT).show();
         }else {
-            UserLogin();
+            UserLogin(email,password);
         }
     }
 
-    private void UserLogin() {
+    private void UserLogin(String email,String password) {
 
 
         firebaseAuth.signInWithEmailAndPassword(email,password).addOnSuccessListener(new OnSuccessListener<AuthResult>() {

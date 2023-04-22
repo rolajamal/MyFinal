@@ -68,12 +68,12 @@ public class Signup extends AppCompatActivity {
         }else if(!password.equals(Cpassword)){
             Toast.makeText(this, "password does not matches", Toast.LENGTH_SHORT).show();
         }else {
-            createUserAccount();
+            createUserAccount(name,email,password,Cpassword);
         }
 
     }
 
-    private void createUserAccount() {
+    private void createUserAccount(String name,String email,String password,String Cpassword ) {
 ;
 
         firebaseAuth.createUserWithEmailAndPassword(email,password).addOnSuccessListener(new OnSuccessListener<AuthResult>() {
