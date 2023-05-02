@@ -26,7 +26,6 @@
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/category_list"
-        android:background="@color/grean"
         android:layout_width="399dp"
         android:layout_height="652dp"
         android:layout_below="@id/searsh_et"
