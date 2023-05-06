@@ -24,5 +24,13 @@
     <string name="enter_your_password" />
     <string name="confirm_password" />
 
+    <string-array name="category">
+        <item>select category</item>
+        <item>winter</item>
+        <item>summer</item>
+        <item>autumn</item>
+        <item>spring</item>
+    </string-array>
+
 
 </resources>
