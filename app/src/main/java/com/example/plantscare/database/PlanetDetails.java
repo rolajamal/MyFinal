@@ -3,6 +3,7 @@ package com.example.plantscare.database;
 public class PlanetDetails {
     String name;
 int id;
+String details;
  public String getName() {
   return name;
  }
@@ -19,4 +20,11 @@ int id;
   this.id = id;
  }
 
+ public String getDetails() {
+  return details;
+ }
+
+ public void setDetails(String details) {
+  this.details = details;
+ }
 }
