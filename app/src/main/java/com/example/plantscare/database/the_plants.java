@@ -8,15 +8,22 @@ public class the_plants {
     int id;
     String name;
     String details;
-    String imga;
+    int imga;
+
+    public the_plants(String خس, int lettuce) {
+    }
+
+    public int getImga() {
+        return imga;
+    }
+
     int id_cat;
     ArrayList<diseases>diseasesArrayList;
     ArrayList<pharmaceutical>pharmaceuticalArrayList;
 
-    public the_plants() {
-    }
+ 
 
-    public the_plants(int id, String name, String details, String imga, int id_cat, ArrayList<diseases> diseasesArrayList, ArrayList<pharmaceutical> pharmaceuticalArrayList) {
+    public the_plants(int id, String name, String details, int imga, int id_cat, ArrayList<diseases> diseasesArrayList, ArrayList<pharmaceutical> pharmaceuticalArrayList) {
         this.id = id;
         this.name = name;
         this.details = details;
@@ -26,7 +33,7 @@ public class the_plants {
         this.pharmaceuticalArrayList = pharmaceuticalArrayList;
     }
 
-    public the_plants(String name, String details, String imga, int id_cat, ArrayList<diseases> diseasesArrayList, ArrayList<pharmaceutical> pharmaceuticalArrayList) {
+    public the_plants(String name, String details, int imga, int id_cat, ArrayList<diseases> diseasesArrayList, ArrayList<pharmaceutical> pharmaceuticalArrayList) {
         this.name = name;
         this.details = details;
         this.imga = imga;
@@ -59,11 +66,9 @@ public class the_plants {
         this.details = details;
     }
 
-    public String getImga() {
-        return imga;
-    }
 
-    public void setImga(String imga) {
+
+    public void setImga(int imga) {
         this.imga = imga;
     }
 
@@ -90,4 +95,6 @@ public class the_plants {
     public void setPharmaceuticalArrayList(ArrayList<pharmaceutical> pharmaceuticalArrayList) {
         this.pharmaceuticalArrayList = pharmaceuticalArrayList;
     }
+
+ 
 }

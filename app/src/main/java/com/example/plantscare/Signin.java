@@ -36,7 +36,7 @@ public class Signin extends AppCompatActivity {
         firebaseAuth= FirebaseAuth.getInstance();
 
 
-        binding.tvSignUp.setOnClickListener(new View.OnClickListener() {
+        binding.SignUp.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent=new Intent(getBaseContext(),Signup.class);
@@ -44,7 +44,7 @@ public class Signin extends AppCompatActivity {
             }
         });
 
-        binding.btnSignIN.setOnClickListener(new View.OnClickListener() {
+        binding.btnSignIn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 valideData();
@@ -56,8 +56,8 @@ public class Signin extends AppCompatActivity {
 
     private String email="",password="";
     private void valideData() {
-        email=binding.emailEt.getText().toString();
-        password=binding.passwordEt.getText().toString();
+        email=binding.EtEmail.getText().toString();
+        password=binding.EtPass.getText().toString();
 
 
         if(!Patterns.EMAIL_ADDRESS.matcher(email).matches()){
@@ -99,7 +99,7 @@ public class Signin extends AppCompatActivity {
                 String usertype= ""+dataSnapshot.child("usertype").getValue();
 
                 if(usertype.equals("user")){
-                    Intent intent=new Intent(Signin.this,Activity_sections.class);
+                    Intent intent=new Intent(Signin.this,Signup.class);
                     startActivity(intent);
                     finish();
                 }else  if(usertype.equals("admin")){
@@ -132,7 +132,7 @@ public class Signin extends AppCompatActivity {
 //            }
 //        });
 
-        binding.tvForgrtpass.setOnClickListener(new View.OnClickListener() {
+        binding.tvForget.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent=new Intent(getBaseContext(),ForgetPassword.class);

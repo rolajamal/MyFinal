@@ -34,14 +34,14 @@ public class Signup extends AppCompatActivity {
         setContentView(binding.getRoot());
         firebaseAuth=FirebaseAuth.getInstance();
 
-        binding.btnSignup.setOnClickListener(new View.OnClickListener() {
+        binding.btnSignUp.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 valideData();
             }
         });
 
-        binding.login.setOnClickListener(new View.OnClickListener() {
+        binding.SignIn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent=new Intent(getBaseContext(),Signin.class);
@@ -52,10 +52,10 @@ public class Signup extends AppCompatActivity {
     private String name="" ,email = "",password="",Cpassword="";
 
     private void valideData() {
-        name=binding.usernameEt.getText().toString();
-        email=binding.emailEt.getText().toString();
-        password=binding.passwordEt.getText().toString();
-        Cpassword=binding.confirmpassEt.getText().toString();
+        name=binding.ETUserName.getText().toString();
+        email=binding.ETEmail.getText().toString();
+        password=binding.ETPass.getText().toString();
+        Cpassword=binding.ETRePass.getText().toString();
 
         if(TextUtils.isEmpty(name)){
             Toast.makeText(this, "enter your name", Toast.LENGTH_SHORT).show();
@@ -111,7 +111,7 @@ public class Signup extends AppCompatActivity {
             @Override
             public void onSuccess(Void unused) {
                 Toast.makeText(Signup.this, "account created...", Toast.LENGTH_SHORT).show();
-                Intent intent=new Intent(Signup.this,Activity_sections.class);
+                Intent intent=new Intent(Signup.this,Signin.class);
 
                 startActivity(intent);
                 finish();

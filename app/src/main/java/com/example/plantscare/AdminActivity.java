@@ -51,7 +51,13 @@ public class AdminActivity extends AppCompatActivity {
 
 
         });
-
+        binding.btnPlant.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent Add=new Intent(AdminActivity.this,Add_plant.class);
+                startActivity(Add);
+            }
+        });
 
         }
 

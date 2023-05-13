@@ -14,19 +14,23 @@
         android:theme="@style/Theme.PlantsCare"
         tools:targetApi="31">
         <activity
-            android:name="com.example.plantscare.ViewTheCategories"
+            android:name=".crops"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".ViewTheCategories"
             android:exported="false" />
         <activity
-            android:name="com.example.plantscare.AddACategory"
+            android:name=".AddACategory"
             android:exported="false" />
         <activity
             android:name=".AdminActivity"
             android:exported="false" />
         <activity
             android:name=".ForgetPassword"
-            android:exported="false" />
-        <activity
-            android:name=".Activity_sections"
             android:exported="false" />
         <activity
             android:name=".Signup"

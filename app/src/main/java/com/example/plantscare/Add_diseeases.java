@@ -28,13 +28,13 @@ public class Add_diseeases extends AppCompatActivity {
         binding=ActivityAddDiseeasesBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
         firebaseAuth=FirebaseAuth.getInstance();
-//        binding.btnSave.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                valideData();
-//
-//            }
-//        });
+        binding.btnSaveD.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                valideData();
+
+            }
+        });
 
 
 
@@ -43,13 +43,13 @@ public class Add_diseeases extends AppCompatActivity {
     }
     String Diseases_name="";
     String Details="";
-    String Diseases="";
+    String treatment="";
 
     private void valideData() {
 
-//        Diseases_name=binding.etNameD.getText().toString();
-//        Details=binding.etDetails.getText().toString();
-//        Diseases=binding.etDiseases.getText().toString();
+        Diseases_name=binding.etNameD.getText().toString();
+        Details=binding.etQ.getText().toString();
+        treatment=binding.etTreatment.getText().toString();
 
 
 
@@ -64,8 +64,8 @@ public class Add_diseeases extends AppCompatActivity {
         }else {
             addDiseasesFirebase();
         }
-        if(TextUtils.isEmpty(Diseases)){
-            Toast.makeText(this, "please enter diseases", Toast.LENGTH_SHORT).show();
+        if(TextUtils.isEmpty(treatment)){
+            Toast.makeText(this, "please enter treatment", Toast.LENGTH_SHORT).show();
         }else {
             addDiseasesFirebase();
         }
@@ -83,7 +83,7 @@ public class Add_diseeases extends AppCompatActivity {
         hashMap.put("id",""+timestamp);
         hashMap.put("plant",Diseases_name);
         hashMap.put("details", Details);
-        hashMap.put("diseases",Diseases);
+        hashMap.put("diseases",treatment);
         hashMap.put("timestamp",timestamp);
         hashMap.put("uid",firebaseAuth.getUid());
 

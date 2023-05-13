@@ -27,7 +27,7 @@ public class Page4 extends AppCompatActivity {
             }
         });
 
-        binding.btnSignin.setOnClickListener(new View.OnClickListener() {
+        binding.btnSignIn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent=new Intent(getBaseContext(),Signin.class);
