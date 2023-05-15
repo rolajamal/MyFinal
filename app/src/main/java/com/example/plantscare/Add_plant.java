@@ -77,6 +77,7 @@ public class Add_plant extends AppCompatActivity {
     String Details="";
     String Diseases="";
     String Category="";
+    String image="";
 
 
     private void valideData() {
@@ -98,6 +99,7 @@ public class Add_plant extends AppCompatActivity {
         }
         else {
             addPlantFirebase();
+            uploadImge();
         }
 
     }
@@ -184,13 +186,13 @@ public class Add_plant extends AppCompatActivity {
                     new ActivityResultCallback<ActivityResult>() {
                         @Override
                         public void onActivityResult(ActivityResult result) {
-//                            if(result.getResultCode()== Activity.RESULT_OK){
-//                                Intent data=result.getData();
-//
-//                                binding.img.setImageURI(ImgUri);
-//                            }else {
-//                                Toast.makeText(Add_plant.this, "canselled...", Toast.LENGTH_SHORT).show();
-//                            }
+                       if(result.getResultCode()== Activity.RESULT_OK){
+                                Intent data=result.getData();
+
+                                binding.img.setImageURI(ImgUri);
+                            }else {
+                                Toast.makeText(Add_plant.this, "canselled...", Toast.LENGTH_SHORT).show();
+                            }
                         }
                     }
             );
