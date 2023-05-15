@@ -98,13 +98,13 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="20dp"
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="65dp"
         android:text="Diseases"
         android:textColor="#457D58"
         android:textSize="24sp"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/img" />
+        app:layout_constraintTop_toBottomOf="@+id/tv_diseases2" />
 
     <TextView
         android:id="@+id/tv_diseases2"
@@ -123,9 +123,9 @@
         android:id="@+id/btn_diseases"
         android:layout_width="150dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="30dp"
-        android:layout_marginEnd="16dp"
+        android:layout_marginTop="20dp"
 
+        android:layout_marginEnd="16dp"
         android:background="@drawable/shape"
         android:text="Add diseases"
         android:textAllCaps="false"
@@ -138,23 +138,24 @@
         android:id="@+id/btn_save"
         android:layout_width="150dp"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="50dp"
+        android:layout_marginTop="20dp"
         android:background="@drawable/shape"
         android:text="Save"
         android:textAllCaps="false"
         android:textColor="#FFFFFF"
         android:textSize="24sp"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btn_diseases" />
 
     <ImageView
         android:id="@+id/img"
-        android:layout_width="80dp"
-        android:layout_height="80dp"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
         android:layout_marginTop="20dp"
         android:layout_marginEnd="30dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/Sp_country"
-        tools:srcCompat="@tools:sample/avatars" />
+        app:srcCompat="@drawable/veg" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
