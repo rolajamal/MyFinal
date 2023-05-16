@@ -58,6 +58,20 @@ public class AdminActivity extends AppCompatActivity {
                 startActivity(Add);
             }
         });
+        binding.btnViewplant.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent Add=new Intent(AdminActivity.this,viewplant.class);
+                startActivity(Add);
+            }
+        });
+//        binding.btnViewplant.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                Intent viewplant = new Intent(AdminActivity.this, viewplant.class);
+//                startActivity(viewplant);
+//            }
+//        });
 
         }
 

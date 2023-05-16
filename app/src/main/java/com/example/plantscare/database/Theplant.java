@@ -4,13 +4,18 @@ package com.example.plantscare.database;
 import java.util.ArrayList;
 
 //النباتات
-public class the_plants {
-    int id;
+public class Theplant {
+    String id;
     String name;
     String details;
     int imga;
+    //String id, int lettuce
 
-    public the_plants(String خس, int lettuce) {
+    public Theplant(String crop, int lettuce) {
+    }
+    public Theplant(String id, String name) {
+        this.id=id;
+        this.name= name;
     }
 
     public int getImga() {
@@ -23,7 +28,7 @@ public class the_plants {
 
  
 
-    public the_plants(int id, String name, String details, int imga, int id_cat, ArrayList<diseases> diseasesArrayList, ArrayList<pharmaceutical> pharmaceuticalArrayList) {
+    public Theplant(String id, String name, String details, int imga, int id_cat, ArrayList<diseases> diseasesArrayList, ArrayList<pharmaceutical> pharmaceuticalArrayList) {
         this.id = id;
         this.name = name;
         this.details = details;
@@ -33,7 +38,7 @@ public class the_plants {
         this.pharmaceuticalArrayList = pharmaceuticalArrayList;
     }
 
-    public the_plants(String name, String details, int imga, int id_cat, ArrayList<diseases> diseasesArrayList, ArrayList<pharmaceutical> pharmaceuticalArrayList) {
+    public Theplant(String name, String details, int imga, int id_cat, ArrayList<diseases> diseasesArrayList, ArrayList<pharmaceutical> pharmaceuticalArrayList) {
         this.name = name;
         this.details = details;
         this.imga = imga;
@@ -42,11 +47,11 @@ public class the_plants {
         this.pharmaceuticalArrayList = pharmaceuticalArrayList;
     }
 
-    public int getId() {
+    public String getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(String id) {
         this.id = id;
     }
 

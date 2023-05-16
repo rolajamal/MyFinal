@@ -34,14 +34,14 @@ public class Signup extends AppCompatActivity {
         setContentView(binding.getRoot());
         firebaseAuth=FirebaseAuth.getInstance();
 
-        binding.btnSignUp.setOnClickListener(new View.OnClickListener() {
+        binding.btnSignup.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 valideData();
             }
         });
 
-        binding.SignIn.setOnClickListener(new View.OnClickListener() {
+        binding.btnSignup.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent=new Intent(getBaseContext(),Signin.class);
@@ -52,10 +52,10 @@ public class Signup extends AppCompatActivity {
     private String name="" ,email = "",password="",Cpassword="";
 
     private void valideData() {
-        name=binding.ETUserName.getText().toString();
-        email=binding.ETEmail.getText().toString();
-        password=binding.ETPass.getText().toString();
-        Cpassword=binding.ETRePass.getText().toString();
+        name=binding.usernameEt.getText().toString();
+        email=binding.emailEt.getText().toString();
+        password=binding.passwordEt.getText().toString();
+        Cpassword=binding.confirmpassEt.getText().toString();
 
         if(TextUtils.isEmpty(name)){
             Toast.makeText(this, "enter your name", Toast.LENGTH_SHORT).show();
