@@ -12,7 +12,7 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.plantscare.database.the_plants;
+import com.example.plantscare.database.Theplant;
 import com.example.plantscare.databinding.ItemBinding;
 
 
@@ -21,12 +21,12 @@ import java.util.List;
 
 
 public class AdaptarPlant extends RecyclerView.Adapter<AdaptarPlant.PlantHoldar> implements Filterable {
-    ArrayList<the_plants> plants;
-    ArrayList<the_plants> plantslist;
+    ArrayList<Theplant> plants;
+    ArrayList<Theplant> plantslist;
 
     Context context;
 
-    public AdaptarPlant(ArrayList<the_plants> plants, Context context) {
+    public AdaptarPlant(ArrayList<Theplant> plants, Context context) {
         this.plants = plants;
         this.context = context;
         plantslist=new ArrayList<>(plants);
@@ -44,7 +44,7 @@ public class AdaptarPlant extends RecyclerView.Adapter<AdaptarPlant.PlantHoldar>
     public void onBindViewHolder(@NonNull PlantHoldar holder, int position) {
 
         int pos=position;
-        the_plants pln=plants.get(pos);
+        Theplant pln=plants.get(pos);
         holder.Name.setText(pln.getName());
         holder.imagePlants.setImageResource(pln.getImga());
 
@@ -65,12 +65,12 @@ public class AdaptarPlant extends RecyclerView.Adapter<AdaptarPlant.PlantHoldar>
     private Filter resFilter=new Filter() {
         @Override
         protected FilterResults performFiltering(CharSequence charSequence) {
-            List<the_plants> filterList=new ArrayList<>();
+            List<Theplant> filterList=new ArrayList<>();
             if(charSequence==null||charSequence.length()==0){
                 filterList.addAll(plantslist);
             }else {
                 String filterPattern=charSequence.toString().toLowerCase().trim();
-                for (the_plants plant : plantslist){
+                for (Theplant plant : plantslist){
                     if (plant.getName().toLowerCase().contains(filterPattern)){
                         filterList.add(plant);
 

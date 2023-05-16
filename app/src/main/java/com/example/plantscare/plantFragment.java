@@ -3,7 +3,6 @@ package com.example.plantscare;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
-import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -12,8 +11,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 
-import com.example.plantscare.database.the_plants;
-import com.example.plantscare.databinding.FragmentPlantBinding;
+import com.example.plantscare.database.Theplant;
 
 import java.util.ArrayList;
 
@@ -24,7 +22,7 @@ public class plantFragment extends Fragment {
     View view;
     ImageView imageView ;
     // ArrayList<Fragment> fragments;
-    ArrayList<the_plants> plants;
+    ArrayList<Theplant> plants;
     AdaptarPlant adapter;
 
     private static final String name = "plantName";
@@ -71,14 +69,14 @@ public class plantFragment extends Fragment {
                              Bundle savedInstanceState) {
         view= inflater.inflate(R.layout.fragment_plant, container, false);
         plants= new ArrayList<>();
-        plants.add(new the_plants("خس",R.drawable.lettuce));
-        plants.add(new the_plants("فاصوليا",R.drawable.beans));
-        plants.add(new the_plants("بندورة",R.drawable.tometo));
-        plants.add(new the_plants("خيار",R.drawable.option));
-        plants.add(new the_plants("جزر",R.drawable.carrot));
-        plants.add(new the_plants("كوسا",R.drawable.zucchini));
-        plants.add(new the_plants("ملفوف ",R.drawable.cabbage));
-        plants.add(new the_plants("بقدونس",R.drawable.parsley));
+        plants.add(new Theplant("خس",R.drawable.lettuce));
+        plants.add(new Theplant("فاصوليا",R.drawable.beans));
+        plants.add(new Theplant("بندورة",R.drawable.tometo));
+        plants.add(new Theplant("خيار",R.drawable.option));
+        plants.add(new Theplant("جزر",R.drawable.carrot));
+        plants.add(new Theplant("كوسا",R.drawable.zucchini));
+        plants.add(new Theplant("ملفوف ",R.drawable.cabbage));
+        plants.add(new Theplant("بقدونس",R.drawable.parsley));
 
 
 
