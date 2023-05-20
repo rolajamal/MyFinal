@@ -2,20 +2,20 @@ package com.example.plantscare.database;
 //التصنيفات
 public class Categories {
     String id_cat;
-    String name;
+    String category;
     String imge;
 
     public Categories() {
     }
 
-    public Categories(String id, String name, String imge) {
+    public Categories(String id, String category, String imge) {
         this.id_cat = id;
-        this.name = name;
+        this.category =category;
         this.imge = imge;
     }
 
-    public Categories(String name, String imge) {
-        this.name = name;
+    public Categories(String category, String imge) {
+        this.category = category;
         this.imge = imge;
     }
 
@@ -27,12 +27,12 @@ public class Categories {
         this.id_cat = id;
     }
 
-    public String getName() {
-        return name;
+    public String getcategory() {
+        return category;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setcategory(String category) {
+        this.category = category;
     }
 
     public String getImge() {

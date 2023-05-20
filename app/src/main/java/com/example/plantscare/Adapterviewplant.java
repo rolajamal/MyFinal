@@ -6,7 +6,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
-import android.widget.ImageButton;
+
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -20,15 +20,19 @@ import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
 
 public class Adapterviewplant  extends RecyclerView.Adapter<Adapterviewplant .HolderPlant>  {
-    ArrayList<Theplant> theplantArrayList;
+    ArrayList<Theplant> theplantArrayList ;
+   onclick onclick;
 
-    public Adapterviewplant(ArrayList<Theplant> theplantArrayList) {
+    public Adapterviewplant(ArrayList<Theplant> theplantArrayList, onclick onclick) {
         this.theplantArrayList = theplantArrayList;
+        this.onclick= onclick;
     }
+
 
     @NonNull
     @Override
@@ -45,54 +49,71 @@ public class Adapterviewplant  extends RecyclerView.Adapter<Adapterviewplant .Ho
 
     @Override
     public void onBindViewHolder(@NonNull Adapterviewplant.HolderPlant holder, int position) {
-        int pos =position;
+        int pos = position;
+
 
        Theplant modelplant=theplantArrayList.get(pos);
 
         String id=   modelplant.getId();
-        String nameplant=modelplant.getName();
+//        modelplant.setId(id);
 
-        holder.tv_name.setText(nameplant);
+//        String nameplant = modelplant.getPlant();
+//          String name =  holder.tv_name.getText().toString();
+
+        holder.tv_name.setText(modelplant.getPlant());
+
         //لما بدو يضغط علي زر الحدف
-//        holder.delete_icon.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                AlertDialog.Builder builder=new AlertDialog.Builder(view.getContext());
-//                builder.setTitle("Delete").setMessage("are you sure you want to delete this category")
-//                        .setPositiveButton("Confirm", new DialogInterface.OnClickListener() {
-//                            @Override
-//                            public void onClick(DialogInterface dialogInterface, int i) {
-//
-//                                deleteCategory(modelplant,holder);
-//
-//                            }
-//                        }).setNegativeButton("Cansel", new DialogInterface.OnClickListener() {
-//                            @Override
-//                            public void onClick(DialogInterface dialogInterface, int i) {
-//
-//                            }
-//                        }).show();
-//
-//            }
-//        });
+        holder.delete_icon.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                AlertDialog.Builder builder=new AlertDialog.Builder(view.getContext());
+                builder.setTitle("Delete").setMessage("are you sure you want to delete this plant")
+                        .setPositiveButton("Confirm", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialogInterface, int i) {
+
+                                deletePlant(modelplant,holder);
+
+
+                            }
+                        }).setNegativeButton("Cansel", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialogInterface, int i) {
+
+                            }
+                        }).show();
+
+            }
+        });
+        holder.edit_icon.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                String id = modelplant.getId();
+                String name = modelplant.getPlant();
+                onclick.onclick(id);
+
+
+            }
+        });
     }
 
-//    private void deleteCategory(  Theplant  modelplant, Adapterviewplant.HolderPlant holder) {
-//
-//         String id= modelplant.getId();
-//        DatabaseReference databaseReference= FirebaseDatabase.getInstance().getReference("plant");
-//        databaseReference.child(id).removeValue().addOnSuccessListener(new OnSuccessListener<Void>() {
-//            @Override
-//            public void onSuccess(Void unused) {
-//
-//            }
-//        }).addOnFailureListener(new OnFailureListener() {
-//            @Override
-//            public void onFailure(@NonNull Exception e) {
-//
-//            }
-//        });
-//    }
+    private void deletePlant(  Theplant  modelplant, Adapterviewplant.HolderPlant holder) {
+
+         String id= modelplant.getId();
+        DatabaseReference databaseReference= FirebaseDatabase.getInstance().getReference("plant");
+        databaseReference.child(id).removeValue().addOnSuccessListener(new OnSuccessListener<Void>() {
+            @Override
+            public void onSuccess(Void unused) {
+
+
+            }
+        }).addOnFailureListener(new OnFailureListener() {
+            @Override
+            public void onFailure(@NonNull Exception e) {
+
+            }
+        });
+    }
 
 
 

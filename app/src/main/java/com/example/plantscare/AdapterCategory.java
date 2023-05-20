@@ -47,7 +47,7 @@ public class AdapterCategory extends RecyclerView.Adapter<AdapterCategory.Holder
         Categories modelCategory=categoriesArrayList.get(pos);
 
         String id=modelCategory.getId();
-        String category=modelCategory.getName();
+        String category=modelCategory.getcategory();
 
         holder.Category_title.setText(category);
          //لما بدو يضغط علي زر الحدف
@@ -72,6 +72,7 @@ public class AdapterCategory extends RecyclerView.Adapter<AdapterCategory.Holder
 
             }
         });
+
     }
 
     private void deleteCategory(Categories modelCategory, HolderCategory holder) {

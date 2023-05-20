@@ -6,16 +6,19 @@ import java.util.ArrayList;
 //النباتات
 public class Theplant {
     String id;
-    String name;
+    String plant;
     String details;
     int imga;
     //String id, int lettuce
 
+    public Theplant() {
+    }
+
     public Theplant(String crop, int lettuce) {
     }
-    public Theplant(String id, String name) {
+    public Theplant(String id, String plant) {
         this.id=id;
-        this.name= name;
+        this.plant= plant;
     }
 
     public int getImga() {
@@ -26,26 +29,16 @@ public class Theplant {
     ArrayList<diseases>diseasesArrayList;
     ArrayList<pharmaceutical>pharmaceuticalArrayList;
 
- 
 
-    public Theplant(String id, String name, String details, int imga, int id_cat, ArrayList<diseases> diseasesArrayList, ArrayList<pharmaceutical> pharmaceuticalArrayList) {
-        this.id = id;
-        this.name = name;
-        this.details = details;
-        this.imga = imga;
-        this.id_cat = id_cat;
-        this.diseasesArrayList = diseasesArrayList;
-        this.pharmaceuticalArrayList = pharmaceuticalArrayList;
+    @Override
+    public String toString() {
+        return "Theplant{" +
+                "id='" + id + '\'' +
+                ", name='" + plant+ '\'' +
+                '}';
     }
 
-    public Theplant(String name, String details, int imga, int id_cat, ArrayList<diseases> diseasesArrayList, ArrayList<pharmaceutical> pharmaceuticalArrayList) {
-        this.name = name;
-        this.details = details;
-        this.imga = imga;
-        this.id_cat = id_cat;
-        this.diseasesArrayList = diseasesArrayList;
-        this.pharmaceuticalArrayList = pharmaceuticalArrayList;
-    }
+
 
     public String getId() {
         return id;
@@ -55,12 +48,12 @@ public class Theplant {
         this.id = id;
     }
 
-    public String getName() {
-        return name;
+    public String getPlant() {
+        return plant;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setPlant(String plant) {
+        this.plant = plant;
     }
 
     public String getDetails() {

@@ -52,6 +52,7 @@ public class Add_plant extends AppCompatActivity {
             public void onClick(View view) {
                 valideData();
 
+
             }
         });
         binding.img.setOnClickListener(new View.OnClickListener() {
@@ -84,6 +85,7 @@ public class Add_plant extends AppCompatActivity {
 
         Plant_name=binding.etNameP.getText().toString();
         Details=binding.etDetails.getText().toString();
+
 
 
 

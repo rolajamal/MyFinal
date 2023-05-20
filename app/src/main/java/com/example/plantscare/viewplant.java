@@ -1,9 +1,11 @@
 package com.example.plantscare;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.annotation.SuppressLint;
+import android.content.Intent;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextUtils;
@@ -20,6 +22,7 @@ import com.example.plantscare.databinding.ActivityViewplantBinding;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.ChildEventListener;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -29,7 +32,7 @@ import com.google.firebase.database.ValueEventListener;
 import java.util.ArrayList;
 import java.util.HashMap;
 
-public class viewplant extends AppCompatActivity {
+public class viewplant extends AppCompatActivity implements  onclick{
     ActivityViewplantBinding binding;
     FirebaseAuth firebaseAuth;
     ArrayList<Theplant> theplantArrayList;
@@ -43,6 +46,7 @@ public class viewplant extends AppCompatActivity {
         binding=ActivityViewplantBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
         firebaseAuth=FirebaseAuth.getInstance();
+
             loadPlant();
 
 
@@ -68,34 +72,49 @@ public class viewplant extends AppCompatActivity {
           theplantArrayList=new ArrayList<>();
             DatabaseReference databaseReference= FirebaseDatabase.getInstance().getReference("plant");
 
+
             databaseReference.addValueEventListener(new ValueEventListener() {
                 @SuppressLint("SuspiciousIndentation")
                 @Override
                 public void onDataChange(@NonNull DataSnapshot snapshot) {
-//                  theplantArrayList.clear();
+                  theplantArrayList.clear();
 
                     for (DataSnapshot ds:snapshot.getChildren()){
-                    modelplant=ds.getValue(Theplant.class);
-
+                   if (snapshot!=null){
+                    modelplant = ds.getValue(Theplant.class);
+                        Log.d("onDataChange: ",snapshot.toString());
+                        Log.d("onDataChange: ",snapshot.getValue().toString());
+                        Log.d("onDataChange: ",snapshot.getKey().toString());
+                       Log.d("modelplant: ",modelplant.toString());
                        theplantArrayList.add(modelplant);
+                   }
                     }
 
-                 adapterplant=new Adapterviewplant(theplantArrayList);
+                 adapterplant=new Adapterviewplant(theplantArrayList,viewplant.this);
                     binding.plantList.setAdapter(adapterplant);
 
                 }
 
                 @Override
                 public void onCancelled(@NonNull DatabaseError error) {
+                 error.toException().printStackTrace();
 
                 }
             });
         }
 
 
-
+    @Override
+    public void onclick(String position) {
+        String id = modelplant.getId();
+        String plant = modelplant.getPlant();
+        Intent intent = new Intent(viewplant.this,Editplant.class);
+        intent.putExtra("id",id);
+        intent.putExtra("plant",plant);
+       startActivity(intent);
 
     }
+}
 
 
 

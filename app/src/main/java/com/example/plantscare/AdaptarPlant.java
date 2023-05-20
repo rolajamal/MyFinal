@@ -45,8 +45,8 @@ public class AdaptarPlant extends RecyclerView.Adapter<AdaptarPlant.PlantHoldar>
 
         int pos=position;
         Theplant pln=plants.get(pos);
-        holder.Name.setText(pln.getName());
-        holder.imagePlants.setImageResource(pln.getImga());
+        holder.Name.setText(pln.getPlant());
+//        holder.imagePlants.setImageResource(pln.getImga());
 
 
 
@@ -71,7 +71,7 @@ public class AdaptarPlant extends RecyclerView.Adapter<AdaptarPlant.PlantHoldar>
             }else {
                 String filterPattern=charSequence.toString().toLowerCase().trim();
                 for (Theplant plant : plantslist){
-                    if (plant.getName().toLowerCase().contains(filterPattern)){
+                    if (plant.getPlant().toLowerCase().contains(filterPattern)){
                         filterList.add(plant);
 
                     }
