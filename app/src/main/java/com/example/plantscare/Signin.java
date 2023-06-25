@@ -36,18 +36,26 @@ public class Signin extends AppCompatActivity {
         firebaseAuth= FirebaseAuth.getInstance();
 
 
-        binding.SignUp.setOnClickListener(new View.OnClickListener() {
+        binding.btnLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent=new Intent(getBaseContext(),Signup.class);
+                Intent intent=new Intent(getBaseContext(),AdminActivity.class);
                 startActivity(intent);
             }
         });
 
-        binding.btnSignIn.setOnClickListener(new View.OnClickListener() {
+        binding.btnLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 valideData();
+            }
+        });
+
+        binding.regTv.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent=new Intent(getBaseContext(),Signup.class);
+                startActivity(intent);
             }
         });
 

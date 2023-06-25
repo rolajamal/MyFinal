@@ -34,28 +34,39 @@ public class Signup extends AppCompatActivity {
         setContentView(binding.getRoot());
         firebaseAuth=FirebaseAuth.getInstance();
 
-        binding.btnSignup.setOnClickListener(new View.OnClickListener() {
+        binding.btnREGISTER.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 valideData();
             }
         });
 
-        binding.btnSignup.setOnClickListener(new View.OnClickListener() {
+        binding.btnREGISTER.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent=new Intent(getBaseContext(),Signin.class);
                 startActivity(intent);
             }
         });
+        binding.logTv.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent=new Intent(getBaseContext(),Signin.class);
+                startActivity(intent);
+
+            }
+        });
+
+
+
     }
-    private String name="" ,email = "",password="",Cpassword="";
+    private String name="" ,email = "",password="",phone="";
 
     private void valideData() {
-        name=binding.usernameEt.getText().toString();
-        email=binding.emailEt.getText().toString();
-        password=binding.passwordEt.getText().toString();
-        Cpassword=binding.confirmpassEt.getText().toString();
+        name=binding.EtUsername.getText().toString();
+        email=binding.EtEmail.getText().toString();
+        password=binding.EtPass.getText().toString();
+        phone=binding.EtPhone.getText().toString();
 
         if(TextUtils.isEmpty(name)){
             Toast.makeText(this, "enter your name", Toast.LENGTH_SHORT).show();
@@ -63,17 +74,15 @@ public class Signup extends AppCompatActivity {
             Toast.makeText(this, "enter your email", Toast.LENGTH_SHORT).show();
         }else if(TextUtils.isEmpty(password)){
             Toast.makeText(this, "enter password", Toast.LENGTH_SHORT).show();
-        }else if(TextUtils.isEmpty(Cpassword)){
-            Toast.makeText(this, "enter cpassword", Toast.LENGTH_SHORT).show();
-        }else if(!password.equals(Cpassword)){
-            Toast.makeText(this, "password does not matches", Toast.LENGTH_SHORT).show();
+        }else if(TextUtils.isEmpty(phone)){
+            Toast.makeText(this, "enter phone", Toast.LENGTH_SHORT).show();
         }else {
-            createUserAccount(name,email,password,Cpassword);
+            createUserAccount(name,email,password,phone);
         }
 
     }
 
-    private void createUserAccount(String name,String email,String password,String Cpassword ) {
+    private void createUserAccount(String name,String email,String password,String phone ) {
 ;
 
         firebaseAuth.createUserWithEmailAndPassword(email,password).addOnSuccessListener(new OnSuccessListener<AuthResult>() {
