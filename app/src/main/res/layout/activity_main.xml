@@ -4,13 +4,15 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#457D58"
+
     tools:context=".MainActivity">
 
     <ImageView
         android:id="@+id/animImg"
-        android:layout_width="133dp"
-        android:layout_height="129dp"
-        android:src="@drawable/signin"
+        android:layout_width="300dp"
+        android:layout_height="300dp"
+        android:src="@drawable/img_splach"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
