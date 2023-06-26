@@ -80,11 +80,10 @@
         app:layout_constraintTop_toBottomOf="@+id/et_details" />
 
     <Spinner
-        android:id="@+id/Sp_country"
+        android:id="@+id/Sp_cat"
         android:layout_width="120dp"
         android:layout_height="50dp"
         android:layout_margin="12dp"
-        android:layout_marginTop="20dp"
         android:layout_marginEnd="20dp"
         android:outlineSpotShadowColor="@color/black"
         android:paddingStart="5dp"
@@ -115,7 +114,7 @@
         android:textSize="24sp"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/Sp_country" />
+        app:layout_constraintTop_toBottomOf="@+id/Sp_cat" />
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/btn_diseases"
@@ -153,11 +152,11 @@
         android:layout_marginTop="20dp"
         android:layout_marginEnd="30dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/Sp_country"
+        app:layout_constraintTop_toBottomOf="@+id/Sp_cat"
         app:srcCompat="@drawable/veg" />
 
     <EditText
-        android:id="@+id/et_sp"
+        android:id="@+id/et_cat"
         android:layout_width="wrap_content"
         android:layout_height="50dp"
         android:layout_marginStart="20dp"
@@ -166,7 +165,8 @@
         android:ems="10"
         android:hint="Add category"
         android:inputType="textPersonName"
-        app:layout_constraintEnd_toStartOf="@+id/Sp_country"
+        app:layout_constraintEnd_toStartOf="@+id/Sp_cat"
+        app:layout_constraintHorizontal_bias="0.03"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tv_category" />
 

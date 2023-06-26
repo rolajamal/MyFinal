@@ -48,14 +48,14 @@ public class Signup extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-        binding.logTv.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent=new Intent(getBaseContext(),Signin.class);
-                startActivity(intent);
-
-            }
-        });
+//        binding.logTv.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                Intent intent=new Intent(getBaseContext(),Signin.class);
+//                startActivity(intent);
+//
+//            }
+//        });
 
 
 
