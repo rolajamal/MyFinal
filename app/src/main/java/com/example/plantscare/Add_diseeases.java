@@ -20,6 +20,8 @@ import java.util.HashMap;
 public class Add_diseeases extends AppCompatActivity {
     ActivityAddDiseeasesBinding binding;
     FirebaseAuth firebaseAuth;
+    private DatabaseReference databaseReference;
+
 
 
     @Override
@@ -41,6 +43,8 @@ public class Add_diseeases extends AppCompatActivity {
 
 
     }
+    String diseasesId = databaseReference.push().getKey();
+
     String Diseases_name="";
     String Details="";
     String treatment="";
@@ -81,6 +85,7 @@ public class Add_diseeases extends AppCompatActivity {
 
         HashMap<String , Object> hashMap=new HashMap<>();
         hashMap.put("id",""+timestamp);
+        hashMap.put("Diseases_id",diseasesId);
         hashMap.put("plant",Diseases_name);
         hashMap.put("details", Details);
         hashMap.put("diseases",treatment);

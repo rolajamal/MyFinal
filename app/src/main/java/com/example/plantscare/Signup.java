@@ -60,13 +60,13 @@ public class Signup extends AppCompatActivity {
 
 
     }
-    private String name="" ,email = "",password="",phone="";
+    private String name="" ,email = "",password="",cn_pass="";
 
     private void valideData() {
         name=binding.EtUsername.getText().toString();
         email=binding.EtEmail.getText().toString();
         password=binding.EtPass.getText().toString();
-        phone=binding.EtPhone.getText().toString();
+        cn_pass=binding.EtCnPass.getText().toString();
 
         if(TextUtils.isEmpty(name)){
             Toast.makeText(this, "enter your name", Toast.LENGTH_SHORT).show();
@@ -74,10 +74,10 @@ public class Signup extends AppCompatActivity {
             Toast.makeText(this, "enter your email", Toast.LENGTH_SHORT).show();
         }else if(TextUtils.isEmpty(password)){
             Toast.makeText(this, "enter password", Toast.LENGTH_SHORT).show();
-        }else if(TextUtils.isEmpty(phone)){
-            Toast.makeText(this, "enter phone", Toast.LENGTH_SHORT).show();
+        }else if(TextUtils.isEmpty(cn_pass)){
+            Toast.makeText(this, "enter cn-password", Toast.LENGTH_SHORT).show();
         }else {
-            createUserAccount(name,email,password,phone);
+            createUserAccount(name,email,password,cn_pass);
         }
 
     }

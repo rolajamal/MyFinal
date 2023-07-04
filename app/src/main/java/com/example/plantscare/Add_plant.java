@@ -43,6 +43,7 @@ import android.Manifest;
         private static final int REQUEST_IMAGE_CAPTURE = 1;
         private static final int REQUEST_IMAGE_PICK = 2;
         private static final int PERMISSION_REQUEST_CODE = 3;
+        String diseasesId;
 
         private ActivityAddPlantBinding binding;
         private FirebaseAuth firebaseAuth;
@@ -67,6 +68,14 @@ import android.Manifest;
             storage = FirebaseStorage.getInstance();
             storageRef = storage.getReference();
 
+            binding.btnDiseases.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    Intent intent = new Intent(getBaseContext(), Add_diseeases.class);
+                    startActivity(intent);
+                }
+            });
+
             binding.btnSave.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
@@ -82,13 +91,7 @@ import android.Manifest;
                 }
             });
 
-            binding.btnDiseases.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View view) {
-                    Intent intent = new Intent(getBaseContext(), Add_diseeases.class);
-                    startActivity(intent);
-                }
-            });
+
         }
 
         private void showImageOptions() {
@@ -206,6 +209,7 @@ import android.Manifest;
                                 public void onSuccess(Uri uri) {
                                     HashMap<String, Object> hashMap = new HashMap<>();
                                     hashMap.put("plantId", plantId);
+                                    hashMap.put("Diseases_id",databaseReference.getKey());
                                     hashMap.put("plantName", plantName);
                                     hashMap.put("details", details);
                                     hashMap.put("category", category);
